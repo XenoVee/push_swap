@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile-Program                                   :+:    :+:             #
+#    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/12/15 17:16:31 by rmaes         ########   odam.nl          #
+#    Updated: 2023/01/09 15:11:10 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,22 +19,32 @@ GREEN = \033[0;92m
 YELLOW = \033[0;93m
 
 SOURCES_DIR = sources/
-FILES =	
+FILES =	push_swap.c parsing.c
 SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
 
 OBJECTS_DIR = objects/
 OBJECTS = $(addprefix $(OBJECTS_DIR), $(FILES:.c=.o))
 
+CDL_LIST = cdl_list/cdl_list.a
+
+LIBFT = libftprintf/libft.a
+
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
-NAME = 
+NAME = push_swap
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(CDL_LIST) $(LIBFT)
 	@echo "compiling: $(YELLOW)creating executable$(DEFAULT)"
 	@gcc -o $@ $^
-	@echo "$(GREEN)$@ successfully compiled!"
+	@echo "$(GREEN)$@ successfully compiled!$(DEFAULT)"
+
+$(LIBFT):
+	@make -C libftprintf
+
+$(CDL_LIST):
+	@make -C cdl_list
 
 $(OBJECTS_DIR):
 	mkdir objects
@@ -45,13 +55,17 @@ $(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.c
 	@$(CC) -c $(CFLAGS) -o $@ $^
 
 clean:
-	@echo "cleaning:  $(RED)removing object files$(DEFAULT)"
+	@echo "cleaning:  $(RED)removing $(NAME) object files$(DEFAULT)"
+	@make clean -C cdl_list
+	@make clean -C libftprintf
 	@rm -f $(OBJECTS)
 
 fclean: clean
-	@echo "cleaning:  $(RED)removing compiled library$(DEFAULT)"
+	@echo "cleaning:  $(RED)removing $(NAME)$(DEFAULT)"
+	@make rmlib -C cdl_list
+	@make rmlib -C libftprintf
 	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
