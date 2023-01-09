@@ -1,6 +1,8 @@
 *
-*/
+!*/
 
 #Whitelist
 !.gitignore
 !Makefile
+!*.c
+!*.h
