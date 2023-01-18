@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:41:07 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/18 18:34:44 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/18 18:39:51 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../cdl_list/include/cdl_list.h"
 # include "../libftprintf/libft.h"
-# include "operations.h"
+// # include "operations.h"
 
 typedef struct s_stacks
 {

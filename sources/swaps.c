@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 17:18:42 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/18 18:34:12 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/18 18:40:12 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	swap(t_dllist *list)
 {
 	if (list->listlen < 2)
 		return (1);
-	cdl_listadfront(list, cdl_listpopnode(list, 1));
+	cdl_listaddfront(list, cdl_listpopnode(list, 1));
 	return (0);
 }
 
@@ -36,4 +36,5 @@ int	ss(t_stacks *stacks)
 		return (1);
 	if (sb(stacks) != 0)
 		return (-1);
+	return (0);
 }
