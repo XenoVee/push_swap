@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   cdl_nodenew.c                                      :+:    :+:            */
+/*   operations.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/12/13 16:15:18 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/09 15:53:56 by rmaes         ########   odam.nl         */
+/*   Created: 2023/01/18 18:32:45 by rmaes         #+#    #+#                 */
+/*   Updated: 2023/01/18 18:34:24 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cdl_list.h"
-#include <stdlib.h>
+#ifndef OPERATIONS_H
+# define OPERATIONS_H
 
-// creates and allocates a new t_dlnode, using the given content
-// the prev and next pointers are set to NULL
-t_dlnode	*cdl_nodenew(int content)
-{
-	t_dlnode	*node;
+# include "push_swap.h"
 
-	node = malloc(sizeof(t_dlnode));
-	if (node == NULL)
-		return (NULL);
-	node->prev = NULL;
-	node->next = NULL;
-	node->content = content;
-	return (node);
-}
+int	sa(t_stacks *stacks);
+int	sb(t_stacks *stacks);
+int	ss(t_stacks *stacks);
+int	pa(t_stacks	*stacks);
+int	pb(t_stacks	*stacks);
+int	ra(t_stacks *stacks);
+int	rb(t_stacks *stacks);
+int	rr(t_stacks *stacks);
+int	rra(t_stacks *stacks);
+int	rrb(t_stacks *stacks);
+int	rrr(t_stacks *stacks);
+
+#endif

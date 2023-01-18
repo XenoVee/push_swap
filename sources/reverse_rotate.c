@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   utils.c                                            :+:    :+:            */
+/*   reverse_rotate.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/01/09 15:20:50 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/13 17:09:12 by rmaes         ########   odam.nl         */
+/*   Created: 2023/01/18 18:31:43 by rmaes         #+#    #+#                 */
+/*   Updated: 2023/01/18 18:31:59 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	isint(char *str)
+int	rra(t_stacks *stacks)
 {
-	int	i;
+	if (stacks->a->listlen < 2)
+		return (1);
+	cdl_listdecr(stacks->a);
+	return (0);
+}
 
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == 0)
-			return (0);
-		i++;
-	}
-	return (1);
+int	rrb(t_stacks *stacks)
+{
+	if (stacks->b->listlen < 2)
+		return (-1);
+	cdl_listdecr(stacks->b);
+	return (0);
+}
+
+int	rrr(t_stacks *stacks)
+{
+	if (stacks->a->listlen < 2)
+		return (1);
+	cdl_listdecr(stacks->a);
+	if (stacks->b->listlen < 2)
+		return (-1);
+	cdl_listdecr(stacks->b);
+	return (0);
 }

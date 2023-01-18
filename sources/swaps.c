@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_sprintf_utils.c                                 :+:    :+:            */
+/*   swaps.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/07/28 14:47:15 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/12/12 16:53:21 by rmaes         ########   odam.nl         */
+/*   Created: 2023/01/18 17:18:42 by rmaes         #+#    #+#                 */
+/*   Updated: 2023/01/18 18:34:12 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_sprintf.h"
-#include <stdlib.h>
+#include "push_swap.h"
 
-int	ft_partlen(const char *s)
+static int	swap(t_dllist *list)
 {
-	int	a;
-
-	a = 0;
-	while (s[a] != '%' && s[a])
-		a++;
-	return (a);
+	if (list->listlen < 2)
+		return (1);
+	cdl_listadfront(list, cdl_listpopnode(list, 1));
+	return (0);
 }
 
-//returns a malloced string that is the result of appending str2 to str1.
-// frees str1
-char	*ft_realc_strjoin(char *str1, char *str2)
+int	sa(t_stacks *stacks)
 {
-	char	*ret;
+	return (swap(stacks->a));
+}
 
-	ret = ft_strjoin(str1, str2);
-	free(str1);
-	return (ret);
+int	sb(t_stacks *stacks)
+{
+	return (swap(stacks->b));
+}
+
+int	ss(t_stacks *stacks)
+{
+	if (sa(stacks) != 0)
+		return (1);
+	if (sb(stacks) != 0)
+		return (-1);
 }

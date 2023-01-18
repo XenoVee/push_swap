@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/13 17:02:37 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/12/15 16:22:13 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/09 15:51:07 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdlib.h>
 
 //deletes and frees the N'th node of LIST, and returns a pointer to the content
-void	*cdl_listdelnode(t_dllist *list, int n)
+int	cdl_listdelnode(t_dllist *list, int n)
 {
 	t_dlnode	*node;
-	void		*content;
+	int			content;
 
 	node = cdl_listpopnode(list, n);
 	content = node->content;

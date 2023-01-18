@@ -7,6 +7,8 @@
 !include
 !cdl_listaddback.c
 !cdl_listaddfront.c
+!cdl_listuaddback.c
+!cdl_listuaddfront.c
 !cdl_listclear.c
 !cdl_listdecr.c
 !cdl_listdelnode.c

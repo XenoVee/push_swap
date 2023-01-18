@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Cdl_list.h                                         :+:    :+:            */
+/*   cdl_list.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: athena <athena@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/13 13:05:43 by athena        #+#    #+#                 */
-/*   Updated: 2022/12/15 16:23:37 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/11 13:39:49 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_dlnode
 {
 	struct s_dlnode	*prev;
-	void			*content;
+	int				content;
 	struct s_dlnode	*next;
 }				t_dlnode;
 
@@ -38,13 +38,15 @@ typedef struct s_dllist
 
 void		cdl_listaddback(t_dllist *list, t_dlnode *node);
 void		cdl_listaddfront(t_dllist *list, t_dlnode *node);
+int			cdl_listuaddback(t_dllist *list, t_dlnode *node);
+int			cdl_listuaddfront(t_dllist *list, t_dlnode *node);
 void		cdl_listdecr(t_dllist *list);
 void		cdl_listincr(t_dllist *list);
-void		*cdl_listdelnode(t_dllist *list, int n);
+int			cdl_listdelnode(t_dllist *list, int n);
 void		cdl_listclear(t_dllist *list);
 t_dlnode	*cdl_listgetnode(t_dllist *list, int n);
 t_dllist	*cdl_listinit(void);
 t_dlnode	*cdl_listpopnode(t_dllist *list, int n);
-t_dlnode	*cdl_nodenew(void *content);
+t_dlnode	*cdl_nodenew(int content);
 
 #endif

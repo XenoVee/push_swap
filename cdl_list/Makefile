@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2022/12/15 21:19:42 by rmaes         ########   odam.nl          #
+#    Updated: 2023/01/11 13:39:16 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ YELLOW = \033[0;93m
 SOURCES_DIR = sources/
 FILES =		cdl_listaddback.c \
 			cdl_listaddfront.c \
+			cdl_listuaddback.c \
+			cdl_listuaddfront.c \
 			cdl_listclear.c \
 			cdl_listdecr.c \
 			cdl_listdelnode.c \

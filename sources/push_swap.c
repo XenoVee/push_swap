@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/12/15 21:36:39 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/18 17:24:15 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@
 
 int	main(int argc, char **argv)
 {
+	t_dllist	*list;
+
 	if (argc < 2)
-		return (0);
-	free(parsing(argc, argv));
+		return (1);
+	list = parsing(argc, argv);
+	if (list)
+		cdl_listclear(list);
+	else
+		return (1);
 }

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   cdl_nodenew.c                                      :+:    :+:            */
+/*   push.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/12/13 16:15:18 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/09 15:53:56 by rmaes         ########   odam.nl         */
+/*   Created: 2023/01/18 17:55:49 by rmaes         #+#    #+#                 */
+/*   Updated: 2023/01/18 17:59:03 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cdl_list.h"
-#include <stdlib.h>
+#include "push_swap.h"
 
-// creates and allocates a new t_dlnode, using the given content
-// the prev and next pointers are set to NULL
-t_dlnode	*cdl_nodenew(int content)
+int	pa(t_stacks	*stacks)
 {
-	t_dlnode	*node;
+	if (stacks->b->listlen < 1)
+		return (1);
+	cdl_listaddfront(stacks->a, cdl_listpopnode(stacks->b, 0));
+	return (0);
+}
 
-	node = malloc(sizeof(t_dlnode));
-	if (node == NULL)
-		return (NULL);
-	node->prev = NULL;
-	node->next = NULL;
-	node->content = content;
-	return (node);
+int	pb(t_stacks	*stacks)
+{
+	if (stacks->a->listlen < 1)
+		return (1);
+	cdl_listaddfront(stacks->b, cdl_listpopnode(stacks->a, 0));
+	return (0);
 }
