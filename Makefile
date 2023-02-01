@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2023/01/30 17:14:20 by rmaes         ########   odam.nl          #
+#    Updated: 2023/02/01 14:56:48 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ YELLOW = \033[0;93m
 
 SOURCES_DIR = sources/
 FILES =	push_swap.c parsing.c utils.c index.c\
-		swaps.c rotate.c reverse_rotate.c push.c
+		swaps.c rotate.c reverse_rotate.c push.c\
+		three.c
 SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
 
 OBJECTS_DIR = objects/

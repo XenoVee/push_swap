@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/01 13:49:20 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/01 17:33:43 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,23 @@ static t_stacks	*init_stacks(void)
 	return (stacks);
 }
 
-// static void	print_stack(t_dllist *list)
-// {
-// 	if (list->head == NULL)
-// 	{
-// 		ft_printf("\n");
-// 		return ;
-// 	}
-// 	list->current = list->head;
-// 	ft_printf("%i\n", list->current->content);
-// 	list->current = list->current->next;
-// 	while (list->current != list->head)
-// 	{
-// 		ft_printf("%i\n", list->current->content);
-// 		list->current = list->current->next;
-// 	}
-// }
+static void	print_stack(t_dllist *list)
+{
+	if (list->head == NULL)
+	{
+		ft_printf("\n");
+		return ;
+	}
+	list->current = list->head;
+	ft_printf("%i.\t\tindex: %i\n", list->current->content, list->current->index);
+	list->current = list->current->next;
+	while (list->current != list->head)
+	{
+		ft_printf("%i.\t\tindex: %i\n",
+			list->current->content, list->current->index);
+		list->current = list->current->next;
+	}
+}
 
 // static void	print_both(t_stacks *stacks)
 // {
@@ -88,13 +89,16 @@ int	main(int argc, char **argv)
 	t_stacks	*stacks;
 
 	if (argc < 2)
-		return (1);
+		return (0);
 	stacks = init_stacks();
 	if (parsing(argc, argv, stacks) != 0)
 		return (1);
 	indexer(stacks);
 	if (sorted(stacks))
 		return (error(stacks, 0));
+	if (argc < 5)
+		sort_three(stacks);
+	print_stack(stacks->a);
 	free_stacks(stacks);
 }
 

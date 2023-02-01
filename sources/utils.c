@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/09 15:20:50 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/01 13:49:11 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/01 17:34:10 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	error(t_stacks *stacks, int v)
 	cdl_listclear(stacks->a);
 	cdl_listclear(stacks->b);
 	free(stacks);
-	return (1);
+	return (v);
 }
 
 void	free_stacks(t_stacks *stacks)
