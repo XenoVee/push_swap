@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/13 16:15:18 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/09 15:53:56 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/30 18:53:32 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ t_dlnode	*cdl_nodenew(int content)
 	node->prev = NULL;
 	node->next = NULL;
 	node->content = content;
+	node->index = 0;
 	return (node);
 }

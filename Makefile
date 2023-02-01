@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2023/01/18 18:38:41 by rmaes         ########   odam.nl          #
+#    Updated: 2023/01/30 17:14:20 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ GREEN = \033[0;92m
 YELLOW = \033[0;93m
 
 SOURCES_DIR = sources/
-FILES =	push_swap.c parsing.c utils.c \
+FILES =	push_swap.c parsing.c utils.c index.c\
 		swaps.c rotate.c reverse_rotate.c push.c
 SOURCES = $(addprefix $(SOURCES_DIR), $(FILES))
 
@@ -33,8 +33,12 @@ LIBFT = libftprintf/libft.a
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = push_swap
+TEST = test
 
 all: $(NAME)
+
+$(TEST): $(OBJECTS) $(CDL_LIST) $(LIBFT)
+	$(CC) -g -o $@ $^
 
 $(NAME): $(OBJECTS) $(CDL_LIST) $(LIBFT)
 	@echo "compiling: $(YELLOW)creating executable$(DEFAULT)"

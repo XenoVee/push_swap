@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_listinit.c                                      :+:    :+:            */
+/*   cdl_listinit.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/13 16:17:09 by rmaes         #+#    #+#                 */
-/*   Updated: 2022/12/15 16:16:00 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/20 16:49:40 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_dllist	*cdl_listinit(void)
 	if (list == NULL)
 		return (NULL);
 	list->head = NULL;
+	list->current = NULL;
 	list->listlen = 0;
 	return (list);
 }

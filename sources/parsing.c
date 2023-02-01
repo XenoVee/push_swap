@@ -6,21 +6,13 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 21:29:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/13 18:26:58 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/01 13:49:38 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <unistd.h>
 #include <limits.h>
-
-t_dllist	*error(t_dllist *list)
-{
-	write(2, "Error\n", 6);
-	cdl_listclear(list);
-	return (0);
-}
 
 static int	intsize(char *str)
 {
@@ -49,30 +41,25 @@ static int	intsize(char *str)
 	return (1);
 }
 
-t_dllist	*parsing(int argc, char **argv)
+int	parsing(int argc, char **argv, t_stacks *stacks)
 {
 	int			i;
-	t_dllist	*list;
-	t_dlnode	*tmp;
 
 	i = 1;
-	list = cdl_listinit();
-	if (list == NULL)
-		return (0);
 	while (i < argc)
 	{
 		if (isint(argv[i]) == 0)
-			return (error(list));
+			return (error(stacks, 1));
 		if (intsize(argv[i]) == 0)
-			return (error(list));
-		if (cdl_listuaddback(list, cdl_nodenew(ft_atoi(argv[i]))) == 1)
-			return (error(list));
+			return (error(stacks, 1));
+		if (cdl_listuaddback(stacks->a, cdl_nodenew(ft_atoi(argv[i]))) == 1)
+			return (error(stacks, 1));
 		i++;
 	}
-	tmp = list->head;
-	do {
-		ft_printf("%i\n", tmp->content);
-		tmp = tmp->next;
-	} while (tmp != list->head);
-	return (list);
+	return (0);
 }
+	// tmp = stacks->a->head;
+	// do {
+	// 	ft_printf("%i\n", tmp->content);
+	// 	tmp = tmp->next;
+	// } while (tmp != stacks->a->head);

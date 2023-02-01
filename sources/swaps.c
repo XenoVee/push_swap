@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/18 17:18:42 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/18 18:40:12 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/01/24 16:03:44 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,22 @@ static int	swap(t_dllist *list)
 
 int	sa(t_stacks *stacks)
 {
+	ft_printf("sa\n");
 	return (swap(stacks->a));
 }
 
 int	sb(t_stacks *stacks)
 {
+	ft_printf("sb\n");
 	return (swap(stacks->b));
 }
 
 int	ss(t_stacks *stacks)
 {
-	if (sa(stacks) != 0)
+	if (swap(stacks->a) != 0)
 		return (1);
-	if (sb(stacks) != 0)
+	if (swap(stacks->b) != 0)
 		return (-1);
+	ft_printf("ss\n");
 	return (0);
 }

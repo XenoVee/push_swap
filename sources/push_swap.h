@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:41:07 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/01/18 18:39:51 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/01 13:49:48 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 # include "../cdl_list/include/cdl_list.h"
 # include "../libftprintf/libft.h"
-// # include "operations.h"
 
-typedef struct s_stacks
-{
-	t_dllist	*a;
-	t_dllist	*b;
-}				t_stacks;
+# include "operations.h"
 
-t_dllist	*parsing(int argc, char **argv);
-int			isint(char *str);
+int		parsing(int argc, char **argv, t_stacks *stacks);
+int		isint(char *str);
+void	free_stacks(t_stacks *stacks);
+void	indexer(t_stacks *stacks);
+int		error(t_stacks *stacks, int v);
 
 #endif
