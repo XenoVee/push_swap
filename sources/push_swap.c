@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/01 17:33:43 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/02 20:07:09 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ static void	print_stack(t_dllist *list)
 	}
 }
 
-// static void	print_both(t_stacks *stacks)
-// {
-// 	ft_printf("Stack A:\n");
-// 	print_stack(stacks->a);
-// 	ft_printf("Stack B:\n");
-// 	print_stack(stacks->b);
-// 	ft_printf("-------\n");
-// }
+static void	print_both(t_stacks *stacks)
+{
+	ft_printf("Stack A:\n");
+	print_stack(stacks->a);
+	ft_printf("Stack B:\n");
+	print_stack(stacks->b);
+	ft_printf("-------\n");
+}
 
 int	sorted(t_stacks *stacks)
 {
@@ -96,15 +96,10 @@ int	main(int argc, char **argv)
 	indexer(stacks);
 	if (sorted(stacks))
 		return (error(stacks, 0));
-	if (argc < 5)
+	if (stacks->a->listlen <= 3)
 		sort_three(stacks);
-	print_stack(stacks->a);
+	if (stacks->a->listlen <= 5)
+		sort_five(stacks);
+	print_both(stacks);
 	free_stacks(stacks);
 }
-
-	// print_both(stacks);
-	// pb(stacks);
-	// pb(stacks);
-	// pb(stacks);
-	// pb(stacks);
-	// print_both(stacks);
