@@ -6,30 +6,30 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/24 14:35:43 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/01 13:32:24 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/02 21:20:17 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-static void	print_stack(t_dllist *list)
-{
-	if (list->head == NULL)
-	{
-		ft_printf("\n");
-		return ;
-	}
-	list->current = list->head;
-	ft_printf("%i.\t\tindex: %i\n", list->current->content, list->current->index);
-	list->current = list->current->next;
-	while (list->current != list->head)
-	{
-		ft_printf("%i.\t\tindex: %i\n",
-			list->current->content, list->current->index);
-		list->current = list->current->next;
-	}
-}
+// static void	print_stack(t_dllist *list)
+// {
+// 	if (list->head == NULL)
+// 	{
+// 		ft_printf("\n");
+// 		return ;
+// 	}
+// 	list->current = list->head;
+// 	ft_printf("%i.\t\tindex: %i\n", list->current->content, list->current->index);
+// 	list->current = list->current->next;
+// 	while (list->current != list->head)
+// 	{
+// 		ft_printf("%i.\t\tindex: %i\n",
+// 			list->current->content, list->current->index);
+// 		list->current = list->current->next;
+// 	}
+// }
 
 static t_dlnode	*find_lowest(t_dlnode *low, t_dllist *list)
 {
@@ -67,5 +67,5 @@ void	indexer(t_stacks	*stacks)
 		found->index = index;
 		index++;
 	}
-	print_stack(stacks->a);
+	// print_stack(stacks->a);
 }
