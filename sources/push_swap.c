@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/02 21:20:31 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/06 17:26:11 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	main(int argc, char **argv)
 		sort_three(stacks);
 	if (stacks->a->listlen <= 5)
 		sort_five(stacks);
-	// print_both(stacks);
+	else
+		sort_long(stacks);
 	free_stacks(stacks);
 }
