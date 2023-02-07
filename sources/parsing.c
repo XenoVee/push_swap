@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 21:29:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/07 16:13:38 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 16:14:38 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	intsize(char *str)
 		sign = -1;
 	if (str[0] == '-' || str[0] == '+')
 		str++;
-	ft_printf("%i %i\n", (int)ft_strlen(str), ft_digitcount(INT_MAX));
 	if ((int)ft_strlen(str) < ft_digitcount(INT_MAX))
 		return (1);
 	if ((int)ft_strlen(str) > ft_digitcount(INT_MAX))
