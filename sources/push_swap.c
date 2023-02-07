@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/06 17:26:11 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 15:31:02 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static t_stacks	*init_stacks(void)
 // 		return ;
 // 	}
 // 	list->current = list->head;
-// 	ft_printf("%i.\t\tindex: %i\n", list->current->content, list->current->index);
+// 	ft_printf("%i.\t\tindex: %i\n", list->current->content,
+// 		list->current->index);
 // 	list->current = list->current->next;
 // 	while (list->current != list->head)
 // 	{
@@ -104,3 +105,4 @@ int	main(int argc, char **argv)
 		sort_long(stacks);
 	free_stacks(stacks);
 }
+	// print_both(stacks);
