@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/07 15:31:02 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 15:40:59 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	main(int argc, char **argv)
 		return (error(stacks, 0));
 	if (stacks->a->listlen <= 3)
 		sort_three(stacks);
-	if (stacks->a->listlen <= 5)
+	else if (stacks->a->listlen <= 5)
 		sort_five(stacks);
 	else
 		sort_long(stacks);

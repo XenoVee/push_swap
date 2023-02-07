@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/01 17:31:01 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/02 21:08:03 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 15:41:09 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ int	sort_three(t_stacks *stacks)
 		ra(stacks);
 		return (0);
 	}
-	if (list->head->index == ind[1] && list->head->next->index == ind[0])
+	else if (list->head->index == ind[1] && list->head->next->index == ind[0])
 		return (sa(stacks));
-	if (list->head->index == ind[1] && list->head->next->index == ind[2])
+	else if (list->head->index == ind[1] && list->head->next->index == ind[2])
 		return (rra(stacks));
-	if (list->head->index == ind[2] && list->head->next->index == ind[1])
+	else if (list->head->index == ind[2] && list->head->next->index == ind[1])
 	{
 		sa(stacks);
 		rra(stacks);
 		return (0);
 	}
-	if (list->head->index == ind[2] && list->head->next->index == ind[0])
+	else if (list->head->index == ind[2] && list->head->next->index == ind[0])
 		return (ra(stacks));
 	return (1);
 }
