@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/24 14:35:43 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/02 21:20:17 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 18:53:42 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 // 		return ;
 // 	}
 // 	list->current = list->head;
-// 	ft_printf("%i.\t\tindex: %i\n", list->current->content, list->current->index);
+// 	ft_printf("%i.\t\tindex: %i\n", list->current->content,
+// 		list->current->index);
 // 	list->current = list->current->next;
 // 	while (list->current != list->head)
 // 	{
@@ -67,5 +68,5 @@ void	indexer(t_stacks	*stacks)
 		found->index = index;
 		index++;
 	}
-	// print_stack(stacks->a);
 }
+	// print_stack(stacks->a);

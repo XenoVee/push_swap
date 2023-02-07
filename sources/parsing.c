@@ -6,7 +6,7 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 21:29:35 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/07 16:14:38 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 18:54:03 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,13 @@ static int	intsize(char *str)
 
 int	parsing(int argc, char **argv, t_stacks *stacks)
 {
-	int			i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
 		if (isint(argv[i]) == 0)
-		{
-			ft_printf("%i\n", isint(argv[i]));
 			return (error(stacks, 1));
-		}
 		if (intsize(argv[i]) == 0)
 			return (error(stacks, 1));
 		if (cdl_listuaddback(stacks->a, cdl_nodenew(ft_atoi(argv[i]))) == 1)

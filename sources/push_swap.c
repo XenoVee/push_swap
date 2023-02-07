@@ -6,40 +6,13 @@
 /*   By: rmaes <rmaes@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/12/15 17:40:00 by rmaes         #+#    #+#                 */
-/*   Updated: 2023/02/07 15:40:59 by rmaes         ########   odam.nl         */
+/*   Updated: 2023/02/07 19:01:45 by rmaes         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-static t_stacks	*init_stacks(void)
-{
-	t_stacks	*stacks;
-	t_dllist	*stacka;
-	t_dllist	*stackb;
-
-	stacka = cdl_listinit();
-	if (stacka == NULL)
-		return (NULL);
-	stackb = cdl_listinit();
-	if (stackb == NULL)
-	{
-		cdl_listclear(stacka);
-		return (NULL);
-	}
-	stacks = malloc(sizeof(t_stacks));
-	if (stacks == NULL)
-	{
-		cdl_listclear(stacka);
-		cdl_listclear(stackb);
-		return (NULL);
-	}
-	stacks->a = stacka;
-	stacks->b = stackb;
-	return (stacks);
-}
 
 // static void	print_stack(t_dllist *list)
 // {
@@ -69,6 +42,38 @@ static t_stacks	*init_stacks(void)
 // 	ft_printf("-------\n");
 // }
 
+// void	leaks(void)
+// {
+// 	system("leaks -q push_swap");
+// }
+
+static t_stacks	*init_stacks(void)
+{
+	t_stacks	*stacks;
+	t_dllist	*stacka;
+	t_dllist	*stackb;
+
+	stacka = cdl_listinit();
+	if (stacka == NULL)
+		return (NULL);
+	stackb = cdl_listinit();
+	if (stackb == NULL)
+	{
+		cdl_listclear(stacka);
+		return (NULL);
+	}
+	stacks = malloc(sizeof(t_stacks));
+	if (stacks == NULL)
+	{
+		cdl_listclear(stacka);
+		cdl_listclear(stackb);
+		return (NULL);
+	}
+	stacks->a = stacka;
+	stacks->b = stackb;
+	return (stacks);
+}
+
 int	sorted(t_stacks *stacks)
 {
 	unsigned int	ind;
@@ -84,6 +89,8 @@ int	sorted(t_stacks *stacks)
 	}
 	return (1);
 }
+
+	// atexit(leaks);
 
 int	main(int argc, char **argv)
 {
@@ -105,4 +112,3 @@ int	main(int argc, char **argv)
 		sort_long(stacks);
 	free_stacks(stacks);
 }
-	// print_both(stacks);
