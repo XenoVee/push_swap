@@ -6,7 +6,7 @@
 #    By: rmaes <rmaes@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/06/13 17:19:52 by rmaes         #+#    #+#                  #
-#    Updated: 2023/02/06 17:25:57 by rmaes         ########   odam.nl          #
+#    Updated: 2023/02/07 16:15:22 by rmaes         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,8 @@ LIBFT = libftprintf/libft.a
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 NAME = push_swap
-TEST = test
 
 all: $(NAME)
-
-$(TEST): $(OBJECTS) $(CDL_LIST) $(LIBFT)
-	$(CC) -g -o $@ $^
 
 $(NAME): $(OBJECTS) $(CDL_LIST) $(LIBFT)
 	@echo "compiling: $(YELLOW)creating executable$(DEFAULT)"
